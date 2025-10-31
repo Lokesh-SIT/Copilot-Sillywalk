@@ -96,14 +96,14 @@ public class SecurityConfiguration {
                 // XSS protection
                 .httpStrictTransportSecurity(hsts -> hsts
                     .maxAgeInSeconds(31536000)
-                    .includeSubdomains(true)
+                    .includeSubDomains(true)
                     .preload(true)
                 )
                 
                 // Content Security Policy
                 .httpStrictTransportSecurity(hsts -> hsts
                     .maxAgeInSeconds(31536000)
-                    .includeSubdomains(true)
+                    .includeSubDomains(true)
                 )
                 
                 // Referrer Policy

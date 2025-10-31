@@ -36,37 +36,31 @@ public class OpenApiConfiguration {
     private Info apiInfo() {
         return new Info()
                 .title("Ministry of Silly Walks Grant Application API")
-                .description("""
-                    ## Overview
-                    The Ministry of Silly Walks Grant Application System API provides secure endpoints 
-                    for submitting and managing grant applications for silly walk assessments.
-                    
-                    ## Security
-                    This API implements enterprise-grade security measures:
-                    - JWT-based authentication required for all submission endpoints
-                    - Comprehensive input validation and sanitization
-                    - Rate limiting and fraud detection
-                    - Non-revealing error messages for security
-                    
-                    ## Silliness Assessment
-                    Applications are automatically assessed using the Ministry's proprietary algorithm:
-                    - Base score: 10 points
-                    - Briefcase integration: +20 points
-                    - Hopping dynamics: +25 points  
-                    - Twirl complexity: +5 points per twirl
-                    - Description creativity: +10-40 points
-                    - Safety deductions: -5 to -15 points
-                    
-                    ## Business Rules
-                    - Maximum 3 applications per applicant per 30-day period
-                    - Unique walk names required per applicant
-                    - Minimum description length: 50 characters
-                    - Maximum twirl count: 100 (safety consideration)
-                    
-                    ## Support
-                    For technical support, contact the Ministry's IT department with the X-Request-ID 
-                    header value from any API response.
-                    """)
+                .description("## Overview\n" +
+                    "The Ministry of Silly Walks Grant Application System API provides secure endpoints " +
+                    "for submitting and managing grant applications for silly walk assessments.\n\n" +
+                    "## Security\n" +
+                    "This API implements enterprise-grade security measures:\n" +
+                    "- JWT-based authentication required for all submission endpoints\n" +
+                    "- Comprehensive input validation and sanitization\n" +
+                    "- Rate limiting and fraud detection\n" +
+                    "- Non-revealing error messages for security\n\n" +
+                    "## Silliness Assessment\n" +
+                    "Applications are automatically assessed using the Ministry's proprietary algorithm:\n" +
+                    "- Base score: 10 points\n" +
+                    "- Briefcase integration: +20 points\n" +
+                    "- Hopping dynamics: +25 points\n" +  
+                    "- Twirl complexity: +5 points per twirl\n" +
+                    "- Description creativity: +10-40 points\n" +
+                    "- Safety deductions: -5 to -15 points\n\n" +
+                    "## Business Rules\n" +
+                    "- Maximum 3 applications per applicant per 30-day period\n" +
+                    "- Unique walk names required per applicant\n" +
+                    "- Minimum description length: 50 characters\n" +
+                    "- Maximum twirl count: 100 (safety consideration)\n\n" +
+                    "## Support\n" +
+                    "For technical support, contact the Ministry's IT department with the X-Request-ID " +
+                    "header value from any API response.")
                 .version("1.0.0")
                 .contact(new Contact()
                         .name("Ministry of Silly Walks IT Department")
@@ -102,21 +96,16 @@ public class OpenApiConfiguration {
                 .type(SecurityScheme.Type.HTTP)
                 .scheme("bearer")
                 .bearerFormat("JWT")
-                .description("""
-                    JWT Authentication required for secure endpoints.
-                    
-                    **How to obtain a token:**
-                    1. Contact Ministry IT for API credentials
-                    2. Use the authentication endpoint (when implemented)
-                    3. Include the token in the Authorization header: `Bearer <token>`
-                    
-                    **Token expiration:** 5 hours for access tokens
-                    **Refresh tokens:** 7 days validity
-                    
-                    **Required permissions:**
-                    - `USER`: Submit grant applications
-                    - `MINISTRY_STAFF`: View statistics and advanced features
-                    - `ADMIN`: Full system access
-                    """);
+                .description("JWT Authentication required for secure endpoints.\n\n" +
+                    "**How to obtain a token:**\n" +
+                    "1. Contact Ministry IT for API credentials\n" +
+                    "2. Use the authentication endpoint (when implemented)\n" +
+                    "3. Include the token in the Authorization header: `Bearer <token>`\n\n" +
+                    "**Token expiration:** 5 hours for access tokens\n" +
+                    "**Refresh tokens:** 7 days validity\n\n" +
+                    "**Required permissions:**\n" +
+                    "- `USER`: Submit grant applications\n" +
+                    "- `MINISTRY_STAFF`: View statistics and advanced features\n" +
+                    "- `ADMIN`: Full system access");
     }
 }

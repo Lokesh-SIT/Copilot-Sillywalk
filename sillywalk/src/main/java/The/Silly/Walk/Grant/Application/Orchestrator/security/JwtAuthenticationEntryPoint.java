@@ -44,15 +44,13 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        String jsonResponse = """
-            {
-                "timestamp": "%s",
-                "status": 401,
-                "error": "Unauthorized",
-                "message": "Authentication required",
-                "path": "%s"
-            }
-            """.formatted(java.time.LocalDateTime.now().toString(), requestURI);
+        String jsonResponse = "{" +
+            "\"timestamp\": \"" + java.time.LocalDateTime.now().toString() + "\"," +
+            "\"status\": 401," +
+            "\"error\": \"Unauthorized\"," +
+            "\"message\": \"Authentication required\"," +
+            "\"path\": \"" + requestURI + "\"" +
+            "}";
 
         response.getWriter().write(jsonResponse);
     }
